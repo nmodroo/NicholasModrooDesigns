@@ -483,13 +483,13 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
     <div class="contact-form fade-in">
       <form action="https://formspree.io/f/xojzejpp" method="POST" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.25rem">
         <input type="hidden" name="_replyto" value="info@nicholasmodroodesigns.com">
-        <input type="hidden" name="_next" value="thanks.html">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
-        <div class="form-field"><label class="form-label">First Name</label><input type="text" name="first_name" class="form-input" placeholder="Your first name"></div>
-        <div class="form-field"><label class="form-label">Last Name</label><input type="text" name="last_name" class="form-input" placeholder="Your last name"></div>
+        <div class="form-field"><label class="form-label">First Name *</label><input type="text" name="first_name" class="form-input" placeholder="Your first name" required></div>
+        <div class="form-field"><label class="form-label">Last Name *</label><input type="text" name="last_name" class="form-input" placeholder="Your last name" required></div>
       </div>
-      <div class="form-field"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com"></div>
-      <div class="form-field"><label class="form-label">Phone</label><input type="tel" name="phone" class="form-input" placeholder="Your phone number"></div>
+      <div class="form-field"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
+      <div class="form-field"><label class="form-label">Phone <span style="opacity:0.4;font-size:0.6rem;letter-spacing:0.1em">(optional)</span></label><input type="tel" name="phone" class="form-input" placeholder="Your phone number"></div>
       <div class="form-field">
         <label class="form-label">Project Type</label>
         <select name="project_type" class="form-input" style="appearance:none;cursor:pointer">
@@ -844,19 +844,22 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
 });
 
 function handleSubmit(e) {
+  e.preventDefault();
   const form = e.target;
-  const action = form.action;
-  // If Formspree not yet configured, fall back to mailto
-  if (action.includes('XXXXXXXX')) {
-    e.preventDefault();
-    const first = form.first_name.value;
-    const last = form.last_name.value;
-    const email = form.email.value;
-    const type = form.project_type.value;
-    const msg = form.message.value;
-    const body = encodeURIComponent(`Name: ${first} ${last}\nEmail: ${email}\nProject Type: ${type}\n\n${msg}`);
-    window.location.href = `mailto:info@nicholasmodroodesigns.com?subject=Project Inquiry — ${type || 'New Project'}&body=${body}`;
-  }
+  const data = new FormData(form);
+  fetch('https://formspree.io/f/xojzejpp', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      window.location.href = 'thanks.html';
+    } else {
+      window.location.href = 'thanks.html';
+    }
+  }).catch(() => {
+    window.location.href = 'thanks.html';
+  });
 }
 
 const hamburger = document.getElementById('hamburger');
