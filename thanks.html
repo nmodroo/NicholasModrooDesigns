@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Nicholas Modroo Designs</title>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/NMDfavicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#f5f0e8;
+  --stone:#c8b99a;
+  --charcoal:#1e1e1c;
+  --dark:#141412;
+  --mid:#3a3834;
+  --white:#fdfcf9;
+}
+html,body{height:100%}
+body{background:var(--dark);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;display:flex;flex-direction:column;min-height:100vh}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;background:rgba(20,20,18,0.92);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.nav-logo span{color:var(--stone)}
+
+.page{flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:100vh}
+.bg{position:absolute;inset:0;background:url('https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/TetonCustom1.jpg') center/cover no-repeat;filter:brightness(0.35)}
+.overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,18,0.92) 0%,rgba(20,20,18,0.4) 100%)}
+
+.content{position:relative;z-index:2;text-align:center;padding:2rem 3rem;max-width:680px}
+.eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--stone);margin-bottom:1.5rem}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:1.75rem}
+.title em{font-style:italic;color:var(--stone)}
+.divider{width:40px;height:0.5px;background:var(--stone);margin:0 auto 1.75rem}
+.message{font-size:0.9rem;line-height:2;color:rgba(245,240,232,0.65);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+.actions{display:flex;gap:1.5rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--stone);color:var(--dark);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;transition:all 0.25s}
+.btn-primary:hover{background:var(--cream)}
+.btn-ghost{color:var(--cream);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.65;border-bottom:0.5px solid transparent;padding-bottom:2px;transition:all 0.25s}
+.btn-ghost:hover{opacity:1;border-bottom-color:var(--stone)}
+
+.fade-in{opacity:0;transform:translateY(24px);animation:fadeUp 0.9s ease forwards}
+.fade-in:nth-child(2){animation-delay:0.15s}
+.fade-in:nth-child(3){animation-delay:0.25s}
+.fade-in:nth-child(4){animation-delay:0.35s}
+.fade-in:nth-child(5){animation-delay:0.5s}
+.fade-in:nth-child(6){animation-delay:0.65s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone)}
+.footer-copy{font-size:0.68rem;letter-spacing:0.1em;color:rgba(245,240,232,0.3)}
+
+@media(max-width:768px){
+  nav{padding:1.25rem 1.5rem}
+  .content{padding:2rem 1.5rem}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Nicholas <span>Modroo</span> Designs</a>
+</nav>
+
+<div class="page">
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="eyebrow fade-in">Inquiry Received</div>
+    <h1 class="title fade-in">Thank You for<br><em>Reaching Out</em></h1>
+    <div class="divider fade-in"></div>
+    <p class="message fade-in">Your inquiry has been received. Nicholas will review your project details and be in touch shortly. In the meantime, explore our portfolio of completed work below.</p>
+    <div class="actions fade-in">
+      <a href="index.html#portfolio" class="btn-primary">View Our Work</a>
+      <a href="index.html" class="btn-ghost">Return to Home →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Nicholas Modroo Designs</div>
+  <div class="footer-copy">© 2025 Nicholas Modroo Designs · Bozeman, MT</div>
+</footer>
+
+</body>
+</html>
