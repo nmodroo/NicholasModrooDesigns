@@ -3,7 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicholas Modroo Designs</title>
+<title>Bozeman Custom Home Designer | Nicholas Modroo Designs</title>
+<meta name="description" content="Residential design studio in Bozeman, MT crafting custom homes and remodels across Big Sky, Yellowstone Club, Teton Valley and the mountain west. 20+ years of experience.">
+<link rel="canonical" href="https://www.nicholasmodroodesigns.com/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Nicholas Modroo Designs">
+<!-- Open Graph / social link previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nicholas Modroo Designs | Custom Homes & Remodels — Bozeman, MT">
+<meta property="og:description" content="Residential design rooted in the mountain west. Custom homes, remodels, and ski-resort residences across Big Sky, Yellowstone Club and beyond.">
+<meta property="og:url" content="https://www.nicholasmodroodesigns.com/">
+<meta property="og:site_name" content="Nicholas Modroo Designs">
+<meta property="og:image" content="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nicholas Modroo Designs | Custom Homes & Remodels — Bozeman, MT">
+<meta name="twitter:description" content="Residential design rooted in the mountain west. Custom homes, remodels, and ski-resort residences.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg">
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/NMDfavicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +46,8 @@ nav.scrolled{background:rgba(20,20,18,0.92);backdrop-filter:blur(12px)}
 .nav-links a:hover{opacity:1}
 .nav-cta{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;border:0.5px solid rgba(200,185,154,0.5);padding:0.55rem 1.5rem;color:var(--stone);text-decoration:none;transition:all 0.25s}
 .nav-cta:hover{background:var(--stone);color:var(--dark)}
+.nav-phone{font-size:0.72rem;letter-spacing:0.16em;color:var(--stone);text-decoration:none;margin-right:1.5rem;opacity:0.85;transition:opacity 0.2s}
+.nav-phone:hover{opacity:1}
 
 .hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg') center/cover no-repeat;filter:brightness(0.55)}
@@ -197,6 +214,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   nav{padding:1.25rem 1.5rem}
   .nav-links{display:none}
   .nav-cta{display:none}
+  .nav-phone{display:none}
   .nav-hamburger{display:flex;z-index:101;position:relative}
 
   .hero{min-height:100svh}
@@ -245,6 +263,38 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   .lb-project{font-size:1rem}
 }
 </style>
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Nicholas Modroo Designs",
+  "description": "Residential design studio in Bozeman, Montana, specializing in custom mountain homes, remodels, and ski-resort residences across the mountain west.",
+  "url": "https://www.nicholasmodroodesigns.com/",
+  "telephone": "+1-406-602-3907",
+  "email": "info@nicholasmodroodesigns.com",
+  "image": "https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bozeman", "addressRegion": "MT", "addressCountry": "US" },
+  "areaServed": [
+    { "@type": "State", "name": "Montana" },
+    { "@type": "State", "name": "Wyoming" },
+    { "@type": "State", "name": "Idaho" },
+    { "@type": "State", "name": "Colorado" },
+    { "@type": "State", "name": "Utah" },
+    { "@type": "State", "name": "Alaska" }
+  ],
+  "knowsAbout": ["Custom home design", "Residential remodels", "Mountain modern architecture", "Log and timber homes", "Ski-in/ski-out residences"],
+  "founder": { "@type": "Person", "name": "Nicholas Modroo" }
+}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS2J5CHZ89"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BS2J5CHZ89');
+</script>
 </head>
 <body>
 
@@ -256,6 +306,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#process">Process</a></li>
   </ul>
+  <a href="tel:+14066023907" class="nav-phone">406-602-3907</a>
   <a href="#contact" class="nav-cta">Begin a Project</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -267,6 +318,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   <a href="#services" class="mobile-link">Services</a>
   <a href="#portfolio" class="mobile-link">Work</a>
   <a href="#process" class="mobile-link">Process</a>
+  <a href="tel:+14066023907" class="mobile-link" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--stone)">406-602-3907</a>
   <a href="#contact" class="nav-mobile-cta mobile-link">Begin a Project</a>
 </div>
 
@@ -291,8 +343,8 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
 <section id="about" style="background:var(--dark)">
   <div class="about-grid">
     <div class="about-image-stack fade-in">
-      <img class="about-img-main" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg" alt="Custom home exterior">
-      <img class="about-img-accent" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/KIBLER-AND-KIRCH_RED-LODGE-024-HDR_300DPI%20(Large).jpg" alt="Custom home interior">
+      <img class="about-img-main" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg" alt="Creekside log and timber custom home exterior, Rock Creek, Red Lodge MT">
+      <img class="about-img-accent" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/KIBLER-AND-KIRCH_RED-LODGE-024-HDR_300DPI%20(Large).jpg" alt="Warm timber-framed great room interior, Red Lodge Montana custom home">
     </div>
     <div class="about-text fade-in">
       <div class="section-label">The Studio</div>
@@ -344,7 +396,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   </div>
   <div class="portfolio-grid fade-in">
     <div class="project-card wide" data-category="mountain-modern" onclick="openLightbox('yc724')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/YC724-1.jpg" alt="YC 724 Custom">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/YC724-1.jpg" alt="Mountain modern custom residence exterior, Yellowstone Club, Big Sky MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Yellowstone Club</div>
         <div class="project-name">YC 724 Custom</div>
@@ -352,7 +404,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card tall" data-category="mountain-modern ski-resort" onclick="openLightbox('mountainveil')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/738f73ee136553efb1610018ef088841106fd668/DJI_0018-Driveway-2-min-2048x1151.jpg" alt="Mountain Veil">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/738f73ee136553efb1610018ef088841106fd668/DJI_0018-Driveway-2-min-2048x1151.jpg" alt="Ski-in ski-out mountain home approach, Mountain Veil, Moonlight Basin MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Moonlight Basin</div>
         <div class="project-name">Mountain Veil</div>
@@ -360,7 +412,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="mountain-modern ski-resort" onclick="openLightbox('moonlight')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP%20-%20Brown%20-%20HR-13%20(Large).jpg" alt="Moonlight Custom Home">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP%20-%20Brown%20-%20HR-13%20(Large).jpg" alt="10,500 sq ft ski-in/ski-out custom home, Moonlight Basin, Big Sky MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Moonlight Basin</div>
         <div class="project-name">Moonlight Custom Home</div>
@@ -368,7 +420,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="mountain-modern log-timber ski-resort" onclick="openLightbox('roamingbear')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP-Cowles-LR-16.jpg" alt="YC Roaming Bear">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP-Cowles-LR-16.jpg" alt="Custom residence, YC Roaming Bear, Yellowstone Club Big Sky MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Yellowstone Club</div>
         <div class="project-name">YC Roaming Bear</div>
@@ -376,7 +428,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="log-timber" onclick="openLightbox('rockcreek')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg" alt="Rock Creek Log Cabin">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/Kibler-and-Kirch_Red-Lodge-8143_300DPI%20(Large).jpg" alt="Creekside log cabin exterior, Rock Creek, Red Lodge MT">
       <div class="project-overlay">
         <div class="project-location">Red Lodge, MT</div>
         <div class="project-name">Rock Creek Log Cabin</div>
@@ -384,7 +436,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card wide" data-category="mountain-modern" onclick="openLightbox('teton')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/TetonCustom1.jpg" alt="Teton Valley Custom Home">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/TetonCustom1.jpg" alt="Custom mountain estate exterior, Teton Valley, Jackson WY">
       <div class="project-overlay">
         <div class="project-location">Jackson, WY</div>
         <div class="project-name">Teton Valley Custom Home</div>
@@ -392,7 +444,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card tall" data-category="mountain-modern ski-resort" onclick="openLightbox('jackcreek')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/2137dd662d09d7a7de818380118d6d40db4351d2/Jack-Creek-%237---%C2%A9-Zakara-Photography---LowRes---Image-01.jpg" alt="Jack Creek Cabins">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/2137dd662d09d7a7de818380118d6d40db4351d2/Jack-Creek-%237---%C2%A9-Zakara-Photography---LowRes---Image-01.jpg" alt="Mountain modern slope-side cabins, Jack Creek, Moonlight Basin Big Sky MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Moonlight Basin</div>
         <div class="project-name">Jack Creek Cabins</div>
@@ -400,7 +452,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="log-timber" onclick="openLightbox('majestic')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/16ca0db3a7db1edd503dcd879ba1ed58e7a98f37/558423808.jpg" alt="Majestic Heli Ski Lodge">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/16ca0db3a7db1edd503dcd879ba1ed58e7a98f37/558423808.jpg" alt="Log and timber heli-ski lodge, Glacier View Alaska">
       <div class="project-overlay">
         <div class="project-location">Glacier View, AK</div>
         <div class="project-name">Majestic Heli Ski Lodge</div>
@@ -408,7 +460,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="mountain-modern ski-resort" onclick="openLightbox('serpens')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/2b5089bb5d59fcb0764ac4ba21f0952d75656a71/Serpens_06770004_JpegLg-scaled.jpg" alt="YC Serpens Trail">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/2b5089bb5d59fcb0764ac4ba21f0952d75656a71/Serpens_06770004_JpegLg-scaled.jpg" alt="Mountain modern ski-area residence, YC Serpens Trail, Yellowstone Club MT">
       <div class="project-overlay">
         <div class="project-location">Big Sky, MT — Yellowstone Club</div>
         <div class="project-name">YC Serpens Trail</div>
@@ -416,7 +468,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="commercial" onclick="openLightbox('carboncounty')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/32a57b410a894f52e1bdd62d4ae203ebefc412d4/web-res_-00607.jpg" alt="Carbon County Steakhouse">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/32a57b410a894f52e1bdd62d4ae203ebefc412d4/web-res_-00607.jpg" alt="Carbon County Steakhouse restaurant interior, Red Lodge MT">
       <div class="project-overlay">
         <div class="project-location">Red Lodge, MT</div>
         <div class="project-name">Carbon County Steakhouse</div>
@@ -424,7 +476,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       </div>
     </div>
     <div class="project-card" data-category="commercial" onclick="openLightbox('bogarts')">
-      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/cbccfa15e799ec031c30e98cc55400d1d35ca9fc/a1233a_35ab078fdb754ebcaf3bc1327f0b3238%7Emv2_d_8256_5504_s_4_2.jpg" alt="Bogarts">
+      <img class="project-img" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/cbccfa15e799ec031c30e98cc55400d1d35ca9fc/a1233a_35ab078fdb754ebcaf3bc1327f0b3238%7Emv2_d_8256_5504_s_4_2.jpg" alt="Bogarts restaurant, Red Lodge Montana commercial design">
       <div class="project-overlay">
         <div class="project-location">Red Lodge, MT</div>
         <div class="project-name">Bogarts</div>
@@ -435,7 +487,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
 </section>
 
 <section class="featured">
-  <img class="featured-bg" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/TetonCustom1.jpg" alt="Teton Valley Custom Home">
+  <img class="featured-bg" src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/TetonCustom1.jpg" alt="Custom mountain estate exterior, Teton Valley, Jackson WY">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(20,20,18,0.88) 0%,rgba(20,20,18,0.2) 100%);z-index:1"></div>
   <div class="featured-content fade-in">
     <div class="featured-tag">Featured Project</div>
@@ -515,7 +567,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       <div class="contact-detail"><div class="contact-icon">◎</div><div class="contact-detail-text"><strong>Portfolio</strong><span><a href="https://archinect.com/nmodroo/projects" target="_blank" style="color:var(--stone);text-decoration:none">View on Archinect →</a></span></div></div>
     </div>
     <div class="fade-in" style="overflow:hidden">
-      <img src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP-Cowles-LR-11.jpg" alt="Interior detail" style="width:100%;height:100%;min-height:420px;object-fit:cover;filter:brightness(0.85)">
+      <img src="https://raw.githubusercontent.com/nmodroo/NicholasModrooDesigns/refs/heads/main/WKP-Cowles-LR-11.jpg" alt="Stone and steel fireplace detail, Yellowstone Club custom home interior" style="width:100%;height:100%;min-height:420px;object-fit:cover;filter:brightness(0.85)">
     </div>
   </div>
 </section>
