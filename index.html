@@ -369,13 +369,13 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       <div class="section-label">What We Offer</div>
       <h2 class="section-title">Full-Spectrum<br><em>Design Services</em></h2>
     </div>
-    <div class="services-grid">
-      <div class="service-card fade-in"><div class="service-icon">◈</div><div class="service-name">Custom Estates</div><p class="service-desc">Ground-up custom homes from 3,000 to 15,000+ sq ft. We guide every decision from site analysis and massing through material selection, construction documentation, and administration.</p></div>
-      <div class="service-card fade-in"><div class="service-icon">◧</div><div class="service-name">Remodels & Additions</div><p class="service-desc">Transformative renovations that honor the bones of an existing home while elevating its functionality, flow, and connection to the landscape. No project too complex.</p></div>
-      <div class="service-card fade-in"><div class="service-icon">◉</div><div class="service-name">Project Management</div><p class="service-desc">Acting as owner's representative and PM, we coordinate architects, engineers, builders, and interior designers — keeping your project on schedule, on budget, and on vision.</p></div>
-      <div class="service-card fade-in"><div class="service-icon">◬</div><div class="service-name">Mountain Modern</div><p class="service-desc">Our signature style — clean lines, natural stone and steel, expansive glass that dissolves the boundary between inside and the mountain panorama beyond.</p></div>
-      <div class="service-card fade-in"><div class="service-icon">◰</div><div class="service-name">Traditional Log & Timber</div><p class="service-desc">Authentic log and heavy timber homes with the warmth of hand-hewn craftsmanship — from intimate creek-side cabins to grand ski lodges and heli-ski retreats.</p></div>
-      <div class="service-card fade-in"><div class="service-icon">◲</div><div class="service-name">Ski-In / Ski-Out</div><p class="service-desc">Specialized expertise in resort community design at Yellowstone Club, Moonlight Basin, and beyond — navigating design review, ARB compliance, and slope-side siting.</p></div>
+        <div class="services-grid">
+      <a class="service-card fade-in" href="site-selection.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◇</div><div class="service-name">Site Selection</div><p class="service-desc">Helping you find and evaluate the right parcel before you buy — assessing buildability, views, access, slope, and ARB or zoning constraints so your land and your home vision align from the start.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
+      <a class="service-card fade-in" href="project-management.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◉</div><div class="service-name">Project Management</div><p class="service-desc">Acting as owner's representative and PM, we coordinate architects, engineers, builders, and interior designers — keeping your project on schedule, on budget, and on vision.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
+      <a class="service-card fade-in" href="mountain-modern.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◬</div><div class="service-name">Mountain Modern</div><p class="service-desc">Our signature style — clean lines, natural stone and steel, expansive glass that dissolves the boundary between inside and the mountain panorama beyond.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
+      <a class="service-card fade-in" href="custom-homes.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◈</div><div class="service-name">Custom Estates</div><p class="service-desc">Ground-up custom homes from 3,000 to 15,000+ sq ft. We guide every decision from site analysis and massing through material selection, construction documentation, and administration.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
+      <a class="service-card fade-in" href="remodels.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◧</div><div class="service-name">Remodels & Additions</div><p class="service-desc">Transformative renovations that honor the bones of an existing home while elevating its functionality, flow, and connection to the landscape. No project too complex.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
+      <a class="service-card fade-in" href="ski-resort-homes.html" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">◲</div><div class="service-name">Ski-In / Ski-Out</div><p class="service-desc">Specialized expertise in resort community design at Yellowstone Club, Moonlight Basin, and beyond — navigating design review, ARB compliance, and slope-side siting.</p><span style="display:inline-block;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)">Learn more &#8594;</span></a>
     </div>
   </div>
 </section>
@@ -573,11 +573,14 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
 </section>
 
 <footer>
-  <div class="footer-logo">Nicholas Modroo Designs</div>
+  <a href="index.html" class="footer-logo" style="text-decoration:none">Nicholas Modroo Designs</a>
   <div class="footer-copy">© 2025 Nicholas Modroo Designs · Bozeman, MT</div>
   <div class="footer-links">
     <a href="#about">Studio</a>
     <a href="#portfolio">Work</a>
+    <a href="custom-homes.html">Custom Homes</a>
+    <a href="remodels.html">Remodels</a>
+    <a href="ski-resort-homes.html">Ski Resort</a>
     <a href="https://archinect.com/nmodroo/projects" target="_blank">Archinect</a>
     <a href="#contact">Contact</a>
   </div>
@@ -839,6 +842,12 @@ function openLightbox(key) {
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  if (window.__fromUrl) {
+    var f = window.__fromUrl; window.__fromUrl = null;
+    if (history.length > 1) { history.back(); }
+    else if (/^[a-z0-9\-]+\.html$/i.test(f)) { window.location.href = f; }
+    return;
+  }
 }
 
 function renderLightbox() {
@@ -962,6 +971,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
   });
 });
+
+// Deep-link: auto-open a project gallery when arriving via index.html?project=KEY
+(function(){
+  try{
+    var key=new URLSearchParams(window.location.search).get('project');
+    var from=new URLSearchParams(window.location.search).get('from');
+    if(key && typeof projects!=='undefined' && projects[key]){ openLightbox(key); if(from){ window.__fromUrl=from; } }
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
