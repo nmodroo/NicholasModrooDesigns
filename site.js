@@ -28,6 +28,9 @@ document.querySelectorAll('form.inquiry-form').forEach(function(form) {
     if (error) error.hidden = true;
 
     var data = new FormData(form);
+    // Project Type is optional on the site, but a blank value gets rejected by the
+    // form service — send "Not specified" instead so the inquiry always goes through.
+    if (!String(data.get('project_type') || '').trim()) data.set('project_type', 'Not specified');
     fetch(form.action, {method: 'POST', body: data, headers: {'Accept': 'application/json'}})
       .then(function(res) {
         if (!res.ok) throw new Error('Form service returned ' + res.status);
