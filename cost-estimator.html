@@ -23,6 +23,24 @@
 /* ───────── FEASIBILITY CALCULATOR (all classes prefixed fz-) ───────── */
 .fz{background:var(--dark)}
 .fz-layout{margin-top:0 !important}
+.fz-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4.5rem;align-items:start;margin-bottom:4.5rem;padding-bottom:4.5rem;border-bottom:0.5px solid rgba(200,185,154,0.15)}
+.fz-intro-lead{font-size:0.95rem;line-height:2;color:rgba(245,240,232,0.72)}
+.fz-how{list-style:none;margin-top:2.25rem;display:flex;flex-direction:column;gap:1.5rem}
+.fz-how li{display:flex;gap:1.25rem;align-items:flex-start}
+.fz-how-num{flex:none;width:2.6rem;height:2.6rem;border-radius:50%;border:0.5px solid var(--stone);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--stone)}
+.fz-how-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--cream);margin:0.2rem 0 0.35rem}
+.fz-how p{font-size:0.82rem;line-height:1.85;color:rgba(245,240,232,0.55)}
+.fz-glance{background:var(--charcoal);border:0.5px solid rgba(200,185,154,0.2);padding:2rem 2rem 1rem}
+.fz-glance-list{margin-top:1.1rem}
+.fz-glance-row{display:flex;gap:1.1rem;padding:1rem 0.75rem;margin:0 -0.75rem;border-bottom:0.5px solid rgba(200,185,154,0.1);text-decoration:none;transition:background 0.25s}
+.fz-glance-row:last-child{border-bottom:none}
+.fz-glance-row:hover{background:var(--mid)}
+.fz-glance-num{flex:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--stone);line-height:1.3;min-width:1.6rem}
+.fz-glance-name{display:block;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream);margin:0.2rem 0 0.4rem}
+.fz-glance-desc{display:block;font-size:0.78rem;line-height:1.7;color:rgba(245,240,232,0.52)}
+.fz-step{scroll-margin-top:7rem}
+@media(max-width:1024px){.fz-intro{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:768px){.fz-intro{margin-bottom:3rem;padding-bottom:3rem}.fz-glance{padding:1.5rem 1.25rem 0.5rem}}
 .fz-free{display:flex;gap:0.6rem;align-items:baseline;font-size:0.76rem;line-height:1.6;color:var(--cream);border-top:0.5px solid rgba(200,185,154,0.18);padding-top:1.1rem;margin:-0.5rem 0 1.1rem}
 .fz-free span{color:var(--stone)}
 .fz-note{font-size:0.76rem;color:rgba(245,240,232,0.5);margin-top:1.25rem}
@@ -187,18 +205,43 @@
 
 <section class="fz" id="feasibility" aria-label="Cost estimator">
   <div class="fz-wrap">
+    <div class="fz-intro">
+      <div>
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">A Clear Starting Point<br><em>in About Two Minutes</em></h2>
+        <div class="divider"></div>
+        <p class="fz-intro-lead">Building in the mountains involves more variables than most projects — location, terrain, scale, and level of craft all move the number. This estimator shows how those choices shape a realistic investment range and timeline, before we ever meet.</p>
+        <ol class="fz-how">
+          <li><span class="fz-how-num">01</span><div><div class="fz-how-name">Shape your project</div><p>Work through the six choices below. Everything starts on a typical Bozeman-area custom home, so begin wherever you like and change anything at any time.</p></div></li>
+          <li><span class="fz-how-num">02</span><div><div class="fz-how-name">Read your estimate</div><p>The summary updates instantly with a total range, where the investment goes, and a concept-to-keys schedule. Try a few scenarios to compare. On a phone, it appears below the options.</p></div></li>
+          <li><span class="fz-how-num">03</span><div><div class="fz-how-name">Send it to the studio</div><p>Share your profile and Nicholas will follow up personally. Your first consultation and initial site visit are complimentary.</p></div></li>
+        </ol>
+      </div>
+      <div class="fz-glance">
+        <div class="fz-panel-label">Your Options at a Glance</div>
+        <div class="fz-glance-list">
+          <a href="#step-1" class="fz-glance-row"><span class="fz-glance-num">01</span><span><span class="fz-glance-name">Territory &amp; Market</span><span class="fz-glance-desc">Where you're building. Resort and remote markets carry higher labor costs, crew mobilization, and longer design-review timelines.</span></span></a>
+          <a href="#step-2" class="fz-glance-row"><span class="fz-glance-num">02</span><span><span class="fz-glance-name">Project Typology</span><span class="fz-glance-desc">A new custom estate, ski-in/ski-out residence, log &amp; timber home, or remodel. This sets the base cost and a typical starting size.</span></span></a>
+          <a href="#step-3" class="fz-glance-row"><span class="fz-glance-num">03</span><span><span class="fz-glance-name">Approximate Conditioned Area</span><span class="fz-glance-desc">The heated living space you have in mind. Slide to adjust — size moves both the budget and the build schedule.</span></span></a>
+          <a href="#step-4" class="fz-glance-row"><span class="fz-glance-num">04</span><span><span class="fz-glance-name">Site Conditions &amp; Topography</span><span class="fz-glance-desc">From an accessible valley or lakefront lot to ranch acreage or a steep alpine slope. Terrain drives foundations, utilities, and access.</span></span></a>
+          <a href="#step-5" class="fz-glance-row"><span class="fz-glance-num">05</span><span><span class="fz-glance-name">Craft &amp; Materiality Tier</span><span class="fz-glance-desc">The level of finish and architectural ambition — from refined and efficient to monumental, heirloom detailing.</span></span></a>
+          <a href="#step-6" class="fz-glance-row"><span class="fz-glance-num">06</span><span><span class="fz-glance-name">Studio Advisory</span><span class="fz-glance-desc">Add full project management (recommended for most builds) or a pre-purchase study if you're still choosing land.</span></span></a>
+        </div>
+      </div>
+    </div>
+
     <div class="fz-layout">
       <!-- Controls (cards are rendered from NMD_FEASIBILITY_CONFIG) -->
       <div class="fz-controls">
-        <div class="fz-step">
+        <div class="fz-step" id="step-1">
           <div class="fz-step-head"><span class="fz-step-num">01</span><span class="fz-step-title" id="fz-t1">Territory &amp; Market</span></div>
           <div class="fz-grid fz-grid-terr" role="radiogroup" aria-labelledby="fz-t1" data-fz-group="territory"></div>
         </div>
-        <div class="fz-step">
+        <div class="fz-step" id="step-2">
           <div class="fz-step-head"><span class="fz-step-num">02</span><span class="fz-step-title" id="fz-t2">Project Typology</span></div>
           <div class="fz-grid fz-grid-2" role="radiogroup" aria-labelledby="fz-t2" data-fz-group="typology"></div>
         </div>
-        <div class="fz-step">
+        <div class="fz-step" id="step-3">
           <div class="fz-step-head"><span class="fz-step-num">03</span><span class="fz-step-title"><label for="fz-sqft">Approximate Conditioned Area</label></span></div>
           <div class="fz-range-row">
             <div class="fz-readout"><div class="fz-readout-num" id="fz-sqft-out">5,500</div><div class="fz-readout-unit">Sq Ft</div></div>
@@ -208,15 +251,15 @@
             </div>
           </div>
         </div>
-        <div class="fz-step">
+        <div class="fz-step" id="step-4">
           <div class="fz-step-head"><span class="fz-step-num">04</span><span class="fz-step-title" id="fz-t4">Site Conditions &amp; Topography</span></div>
           <div class="fz-grid fz-grid-3" role="radiogroup" aria-labelledby="fz-t4" data-fz-group="site"></div>
         </div>
-        <div class="fz-step">
+        <div class="fz-step" id="step-5">
           <div class="fz-step-head"><span class="fz-step-num">05</span><span class="fz-step-title" id="fz-t5">Architectural Craft &amp; Materiality Tier</span></div>
           <div class="fz-grid fz-grid-3" role="radiogroup" aria-labelledby="fz-t5" data-fz-group="craft"></div>
         </div>
-        <div class="fz-step">
+        <div class="fz-step" id="step-6">
           <div class="fz-step-head"><span class="fz-step-num">06</span><span class="fz-step-title">Studio Advisory &amp; Project Management</span></div>
           <div data-fz-group="addons"></div>
           <p class="fz-note">Still choosing land? <a href="site-selection.html" class="inline-link">How our site selection service works →</a></p>

@@ -136,8 +136,11 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
 .nav-phone{margin-left:1.75rem}
 @media(max-width:1640px){.nav-links{gap:1.6rem}.nav-links a{letter-spacing:0.15em}}
 @media(max-width:1470px){.nav-phone{display:none}}
-@media(max-width:1300px){nav{padding:1.5rem 2rem}.nav-links{gap:1.15rem}.nav-links a{letter-spacing:0.1em;font-size:0.68rem}.nav-logo{font-size:1rem;letter-spacing:0.14em}}
+@media(max-width:1300px) and (min-width:769px){nav{padding:1.5rem 2rem}.nav-links{gap:1.15rem}.nav-links a{letter-spacing:0.1em;font-size:0.68rem}.nav-logo{font-size:1rem;letter-spacing:0.14em}}
 @media(max-width:1130px){.nav-links{display:none}}
+
+/* Small phones: keep logo and button on one line without touching */
+@media(max-width:600px){.nav-logo{font-size:0.86rem;letter-spacing:0.12em}.nav-cta{padding:0.5rem 0.85rem;font-size:0.6rem;letter-spacing:0.12em;white-space:nowrap}}
 
 /* ===== Project case-study pages ===== */
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto;border-top:0.5px solid rgba(200,185,154,0.22);border-bottom:0.5px solid rgba(200,185,154,0.22);padding:2.25rem 0}
