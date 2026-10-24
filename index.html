@@ -182,6 +182,9 @@ section{padding:7rem 3rem}
 .form-input.textarea{min-height:130px;resize:vertical}
 .form-submit{background:var(--stone);color:var(--dark);border:none;font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:1.1rem 2.5rem;cursor:pointer;width:fit-content;transition:background 0.25s}
 .form-submit:hover{background:var(--cream)}
+.form-submit:disabled{opacity:0.6;cursor:wait}
+.form-error{font-size:0.8rem;line-height:1.7;color:#e8b4a0;border:0.5px solid rgba(232,180,160,0.4);padding:0.85rem 1rem}
+.form-error a{color:var(--cream)}
 .contact-info{padding-top:1rem}
 .contact-info p{font-size:0.85rem;line-height:2;color:rgba(245,240,232,0.6);margin-bottom:2.5rem}
 .contact-detail{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.75rem}
@@ -534,8 +537,8 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   </div>
   <div class="contact-grid">
     <div class="contact-form fade-in">
-      <form action="https://formspree.io/f/xojzejpp" method="POST" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.25rem">
-        <input type="hidden" name="_replyto" value="info@nicholasmodroodesigns.com">
+      <form class="inquiry-form" action="https://formspree.io/f/xojzejpp" method="POST" style="display:flex;flex-direction:column;gap:1.25rem">
+        <input type="hidden" name="source_page" value="Homepage">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="form-field"><label class="form-label">First Name *</label><input type="text" name="first_name" class="form-input" placeholder="Your first name" required></div>
@@ -555,6 +558,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
         </select>
       </div>
       <div class="form-field"><label class="form-label">Tell us about your vision</label><textarea name="message" class="form-input textarea" placeholder="Location, scale, style aspirations, timeline..."></textarea></div>
+      <p class="form-error" role="alert" hidden>Sorry — your message didn't go through. Please call <a href="tel:+14066023907">406-602-3907</a> or email <a href="mailto:info@nicholasmodroodesigns.com">info@nicholasmodroodesigns.com</a>.</p>
       <button type="submit" class="form-submit">Send Inquiry</button>
       </form>
       <p style="font-size:0.72rem;color:rgba(245,240,232,0.3);margin-top:0.75rem">Or email us directly: <a href="mailto:info@nicholasmodroodesigns.com" style="color:var(--stone);text-decoration:none">info@nicholasmodroodesigns.com</a></p>
@@ -936,25 +940,6 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
 });
 
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  fetch('https://formspree.io/f/xojzejpp', {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  }).then(res => {
-    if (res.ok) {
-      window.location.href = 'thanks.html';
-    } else {
-      window.location.href = 'thanks.html';
-    }
-  }).catch(() => {
-    window.location.href = 'thanks.html';
-  });
-}
-
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
@@ -1045,5 +1030,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   }
 })();
 </script>
+<script src="site.js" defer></script>
 </body>
 </html>
