@@ -23,6 +23,8 @@
 /* ───────── FEASIBILITY CALCULATOR (all classes prefixed fz-) ───────── */
 .fz{background:var(--dark)}
 .fz-layout{margin-top:0 !important}
+.fz-free{display:flex;gap:0.6rem;align-items:baseline;font-size:0.76rem;line-height:1.6;color:var(--cream);border-top:0.5px solid rgba(200,185,154,0.18);padding-top:1.1rem;margin:-0.5rem 0 1.1rem}
+.fz-free span{color:var(--stone)}
 .fz-note{font-size:0.76rem;color:rgba(245,240,232,0.5);margin-top:1.25rem}
 .inline-link{color:var(--stone);text-decoration:none;border-bottom:0.5px solid rgba(200,185,154,0.45);transition:border-color 0.2s,color 0.2s}
 .inline-link:hover{color:var(--cream);border-bottom-color:var(--cream)}
@@ -139,6 +141,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "Is the first consultation free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your first consultation and an initial site visit are complimentary — a chance to walk the land, talk through your goals, and see whether we're the right fit, with no obligation. A full Pre-Purchase Site Selection & Feasibility Study is a separate, deeper engagement for when you're evaluating a specific parcel in detail." } },
     { "@type": "Question", "name": "How accurate is the feasibility estimate?", "acceptedAnswer": { "@type": "Answer", "text": "It is a preliminary, order-of-magnitude range for early planning, not a bid. Real costs are set through site analysis, design development, and builder pricing — the estimate is a starting point for that conversation." } },
     { "@type": "Question", "name": "What does the estimate include and exclude?", "acceptedAnswer": { "@type": "Answer", "text": "It includes residence construction, sitework and utilities, design, engineering and project management, and an owner contingency. It excludes the cost of land, interiors and furnishings, and financing." } },
     { "@type": "Question", "name": "What happens after I send my profile?", "acceptedAnswer": { "@type": "Answer", "text": "Your selections arrive with your message, so Nicholas can review your site, scale and goals and follow up personally with a more grounded conversation about budget and timeline." } }
@@ -241,6 +244,7 @@
 
         <p class="fz-disclaim">A preliminary, order-of-magnitude model for planning conversations — not a bid or guaranteed price. Land, interiors/FF&amp;E, and financing are excluded. Final investment is set through site analysis, design, and builder pricing.</p>
 
+        <p class="fz-free"><span aria-hidden="true">◇</span> Your first consultation and initial site visit are complimentary.</p>
         <button type="button" class="fz-cta" id="fz-open" aria-expanded="false" aria-controls="fz-drawer">Send This Profile to the Studio →</button>
 
         <div class="fz-drawer" id="fz-drawer" inert>
@@ -281,6 +285,7 @@
     <h2 class="section-title">Feasibility <em>FAQ</em></h2>
   </div>
   <div class="faq">
+    <div class="faq-item"><div class="faq-q">Is the first consultation free?</div><p class="faq-a">Yes. Your first consultation and an initial site visit are complimentary — a chance to walk the land, talk through your goals, and see whether we're the right fit, with no obligation. A full Pre-Purchase Site Selection &amp; Feasibility Study is a separate, deeper engagement for when you're evaluating a specific parcel in detail.</p></div>
     <div class="faq-item"><div class="faq-q">How accurate is this estimate?</div><p class="faq-a">It's a preliminary, order-of-magnitude range for early planning — not a bid. Real costs are set through site analysis, design development, and builder pricing. Think of it as the starting point for that conversation.</p></div>
     <div class="faq-item"><div class="faq-q">What's included, and what isn't?</div><p class="faq-a">Included: residence construction, sitework and utilities, design, engineering and project management, and a recommended owner contingency. Not included: the land itself, interiors and furnishings, and financing.</p></div>
     <div class="faq-item"><div class="faq-q">Why does location change the number so much?</div><p class="faq-a">Resort and remote markets carry higher labor and material costs, mobilization for crews and equipment, and longer design-review and permitting timelines. Steep or slope-side sites add foundation, excavation and snow-load engineering on top of that.</p></div>
@@ -290,7 +295,7 @@
 
 <div class="cta-band" id="contact">
   <h2>Ready to <em>Talk Specifics?</em></h2>
-  <p>Your calculator selections travel with this form, so we'll already know the shape of your project when we reply.</p>
+  <p>Your first consultation and initial site visit are complimentary. Your calculator selections travel with this form, so we'll already know the shape of your project when we reply.</p>
   <form class="inquiry-form cta-form" action="https://formspree.io/f/xojzejpp" method="POST">
     <input type="hidden" name="source_page" value="Feasibility page">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
