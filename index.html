@@ -266,6 +266,21 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   .lb-header{padding:1rem 1.25rem}
   .lb-project{font-size:1rem}
 }
+
+
+.inline-link{color:var(--stone);text-decoration:none;border-bottom:0.5px solid rgba(200,185,154,0.45);transition:border-color 0.2s,color 0.2s}
+.inline-link:hover{color:var(--cream);border-bottom-color:var(--cream)}
+/* process steps were ~10px wider than small phone screens */
+@media(max-width:768px){.process-steps{gap:2rem 1rem}.process-step{padding:0 0.25rem;min-width:0}}
+/* mobile menu: scroll instead of clipping on short / landscape screens */
+.nav-mobile-menu{overflow-y:auto;justify-content:safe center;padding:4.5rem 0 1.5rem}
+@media(max-height:720px){.nav-mobile-menu{gap:1.9rem}}
+@media(max-height:560px){.nav-mobile-menu{gap:0.9rem;padding-top:4rem}.nav-mobile-menu a{font-size:1.35rem}}
+/* nav spacing with the added Feasibility link */
+.nav-phone{margin-left:1.75rem}
+@media(max-width:1366px){.nav-links{gap:1.6rem}.nav-links a{letter-spacing:0.16em}}
+@media(max-width:1240px){.nav-phone{display:none}}
+@media(max-width:1100px){.nav-links,.nav-cta,.nav-phone{display:none}.nav-hamburger{display:flex;z-index:101;position:relative}}
 </style>
 <!-- LocalBusiness structured data -->
 <script type="application/ld+json">
@@ -309,6 +324,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="feasibility.html">Feasibility</a></li>
   </ul>
   <a href="tel:+14066023907" class="nav-phone">406-602-3907</a>
   <a href="#contact" class="nav-cta">Begin a Project</a>
@@ -322,6 +338,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   <a href="#services" class="mobile-link">Services</a>
   <a href="#portfolio" class="mobile-link">Work</a>
   <a href="#process" class="mobile-link">Process</a>
+  <a href="feasibility.html" class="mobile-link">Feasibility</a>
   <a href="tel:+14066023907" class="mobile-link" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--stone)">406-602-3907</a>
   <a href="#contact" class="nav-mobile-cta mobile-link">Begin a Project</a>
 </div>
@@ -519,6 +536,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
       <div class="process-step fade-in"><div class="step-num">03</div><div class="step-name">Documentation</div><p class="step-desc">Construction documents, ARB submittals, permit drawings, and full coordination with structural and MEP engineers.</p></div>
       <div class="process-step fade-in"><div class="step-num">04</div><div class="step-name">Administration</div><p class="step-desc">On-site presence, RFI management, change order review, and punch list close-out — we stay until the last detail is right.</p></div>
     </div>
+    <p class="fade-in" style="margin-top:3.5rem;font-size:0.85rem;color:rgba(245,240,232,0.55)">Budget alignment starts in Discovery. <a href="feasibility.html" class="inline-link">Model a preliminary investment range and timeline →</a></p>
   </div>
 </section>
 
@@ -541,14 +559,14 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
         <input type="hidden" name="source_page" value="Homepage">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
-        <div class="form-field"><label class="form-label">First Name *</label><input type="text" name="first_name" class="form-input" placeholder="Your first name" required></div>
-        <div class="form-field"><label class="form-label">Last Name *</label><input type="text" name="last_name" class="form-input" placeholder="Your last name" required></div>
+        <div class="form-field"><label class="form-label" for="cf-fn">First Name *</label><input id="cf-fn" type="text" name="first_name" class="form-input" placeholder="Your first name" required></div>
+        <div class="form-field"><label class="form-label" for="cf-ln">Last Name *</label><input id="cf-ln" type="text" name="last_name" class="form-input" placeholder="Your last name" required></div>
       </div>
-      <div class="form-field"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
-      <div class="form-field"><label class="form-label">Phone <span style="opacity:0.4;font-size:0.6rem;letter-spacing:0.1em">(optional)</span></label><input type="tel" name="phone" class="form-input" placeholder="Your phone number"></div>
+      <div class="form-field"><label class="form-label" for="cf-em">Email *</label><input id="cf-em" type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
+      <div class="form-field"><label class="form-label" for="cf-ph">Phone <span style="opacity:0.4;font-size:0.6rem;letter-spacing:0.1em">(optional)</span></label><input id="cf-ph" type="tel" name="phone" class="form-input" placeholder="Your phone number"></div>
       <div class="form-field">
-        <label class="form-label">Project Type</label>
-        <select name="project_type" class="form-input" style="appearance:none;cursor:pointer">
+        <label class="form-label" for="cf-pt">Project Type</label>
+        <select id="cf-pt" name="project_type" class="form-input" style="appearance:none;cursor:pointer">
           <option value="">Select a project type</option>
           <option>New Custom Home</option>
           <option>Remodel / Addition</option>
@@ -557,7 +575,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
           <option>Other</option>
         </select>
       </div>
-      <div class="form-field"><label class="form-label">Tell us about your vision</label><textarea name="message" class="form-input textarea" placeholder="Location, scale, style aspirations, timeline..."></textarea></div>
+      <div class="form-field"><label class="form-label" for="cf-msg">Tell us about your vision</label><textarea id="cf-msg" name="message" class="form-input textarea" placeholder="Location, scale, style aspirations, timeline..."></textarea></div>
       <p class="form-error" role="alert" hidden>Sorry — your message didn't go through. Please call <a href="tel:+14066023907">406-602-3907</a> or email <a href="mailto:info@nicholasmodroodesigns.com">info@nicholasmodroodesigns.com</a>.</p>
       <button type="submit" class="form-submit">Send Inquiry</button>
       </form>
@@ -587,6 +605,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
     <a href="remodels.html">Remodels</a>
     <a href="ski-resort-homes.html">Ski Resort</a>
     <a href="https://archinect.com/nmodroo/projects" target="_blank">Archinect</a>
+    <a href="feasibility.html">Feasibility</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
@@ -603,7 +622,7 @@ footer{background:var(--dark);border-top:0.5px solid rgba(200,185,154,0.12);padd
   <div class="lb-body">
     <div class="lb-main">
       <button class="lb-arrow lb-prev" onclick="lbNav(-1)">&#8592;</button>
-      <img class="lb-img" id="lb-img" src="" alt="">
+      <img class="lb-img" id="lb-img" alt="">
       <button class="lb-arrow lb-next" onclick="lbNav(1)">&#8594;</button>
     </div>
     <div class="lb-info" id="lb-info"></div>
