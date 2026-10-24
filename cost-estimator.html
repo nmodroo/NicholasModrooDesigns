@@ -103,6 +103,12 @@
 .fz-tag{margin-top:1.1rem;font-size:0.64rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.6);line-height:1.8}
 .fz-total{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.4vw,3rem);font-weight:300;color:var(--white);line-height:1.05;margin:0.9rem 0 0.35rem;transition:opacity 0.2s}
 .fz-total-note{font-size:0.66rem;letter-spacing:0.12em;color:rgba(245,240,232,0.4)}
+.fz-psf{margin-top:1.25rem;padding:0.9rem 1rem;border:0.5px solid rgba(200,185,154,0.25);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:0.4rem 1rem}
+.fz-psf-main{display:flex;align-items:baseline;gap:0.6rem}
+.fz-psf-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--stone);line-height:1}
+.fz-psf-unit{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.55)}
+.fz-psf-sub{font-size:0.7rem;color:rgba(245,240,232,0.45)}
+.fz-psf-sub span{color:rgba(245,240,232,0.75)}
 .fz-rows{margin:1.75rem 0;border-top:0.5px solid rgba(200,185,154,0.18)}
 .fz-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid rgba(200,185,154,0.1)}
 .fz-row-name{font-size:0.76rem;line-height:1.55;color:rgba(245,240,232,0.62)}
@@ -161,7 +167,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "Is the first consultation free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your first consultation and an initial site visit are complimentary — a chance to walk the land, talk through your goals, and see whether we're the right fit, with no obligation. A full Pre-Purchase Site Selection & Feasibility Study is a separate, deeper engagement for when you're evaluating a specific parcel in detail." } },
     { "@type": "Question", "name": "How accurate is the cost estimate?", "acceptedAnswer": { "@type": "Answer", "text": "It is a preliminary, order-of-magnitude range for early planning, not a bid. Real costs are set through site analysis, design development, and builder pricing — the estimate is a starting point for that conversation." } },
-    { "@type": "Question", "name": "What does the estimate include and exclude?", "acceptedAnswer": { "@type": "Answer", "text": "It includes residence construction, sitework and utilities, design, engineering and project management, and an owner contingency. It excludes the cost of land, interiors and furnishings, and financing." } },
+    { "@type": "Question", "name": "What does the estimate include and exclude?", "acceptedAnswer": { "@type": "Answer", "text": "It includes residence construction, sitework and utilities, design, engineering and project management, and an owner contingency. It excludes the cost of land, interiors and furnishings, and financing. The cost per square foot is all-in — everything above divided by the home's size. Builder quotes per square foot usually cover construction alone, so that figure is shown separately for a like-for-like comparison." } },
     { "@type": "Question", "name": "What happens after I send my profile?", "acceptedAnswer": { "@type": "Answer", "text": "Your selections arrive with your message, so Nicholas can review your site, scale and goals and follow up personally with a more grounded conversation about budget and timeline." } }
   ]
 }
@@ -213,7 +219,7 @@
         <p class="fz-intro-lead">Building in the mountains involves more variables than most projects — location, terrain, scale, and level of craft all move the number. This estimator shows how those choices shape a realistic investment range and timeline, before we ever meet.</p>
         <ol class="fz-how">
           <li><span class="fz-how-num">01</span><div><div class="fz-how-name">Shape your project</div><p>Work through the six choices below. Everything starts on a typical Bozeman-area custom home, so begin wherever you like and change anything at any time.</p></div></li>
-          <li><span class="fz-how-num">02</span><div><div class="fz-how-name">Read your estimate</div><p>The summary updates instantly with a total range, where the investment goes, and a concept-to-keys schedule. Try a few scenarios to compare. On a phone, it appears below the options.</p></div></li>
+          <li><span class="fz-how-num">02</span><div><div class="fz-how-name">Read your estimate</div><p>The summary updates instantly with a total range, a ballpark cost per square foot, where the investment goes, and a concept-to-keys schedule. Try a few scenarios to compare. On a phone, it appears below the options.</p></div></li>
           <li><span class="fz-how-num">03</span><div><div class="fz-how-name">Send it to the studio</div><p>Share your profile and Nicholas will follow up personally. Your first consultation and initial site visit are complimentary.</p></div></li>
         </ol>
       </div>
@@ -272,6 +278,10 @@
         <div class="fz-tag" id="fz-tag"></div>
         <div class="fz-total" id="fz-total" aria-live="polite" aria-atomic="true"></div>
         <div class="fz-total-note">Estimated total investment range · ±8%</div>
+        <div class="fz-psf">
+          <div class="fz-psf-main"><span class="fz-psf-val" id="fz-psf"></span><span class="fz-psf-unit">per sq ft, all-in</span></div>
+          <div class="fz-psf-sub">Construction alone <span id="fz-psf-build"></span> / sq ft</div>
+        </div>
 
         <div class="fz-rows">
           <div class="fz-row"><span class="fz-row-name">Residence Construction &amp; Climate Zone 6 Envelope</span><span class="fz-row-val" id="fz-r-build"></span></div>
@@ -304,6 +314,7 @@
               <input type="hidden" name="Feasibility_Advisory_Addons" data-fz-field="Feasibility_Advisory_Addons">
               <input type="hidden" name="Feasibility_Estimated_Range" data-fz-field="Feasibility_Estimated_Range">
               <input type="hidden" name="Feasibility_Timeline" data-fz-field="Feasibility_Timeline">
+              <input type="hidden" name="Feasibility_Cost_Per_SqFt" data-fz-field="Feasibility_Cost_Per_SqFt">
               <div class="form-row">
                 <div class="form-field"><label class="form-label" for="fz-fn">First Name *</label><input id="fz-fn" type="text" name="first_name" class="form-input" placeholder="First name" required></div>
                 <div class="form-field"><label class="form-label" for="fz-ln">Last Name *</label><input id="fz-ln" type="text" name="last_name" class="form-input" placeholder="Last name" required></div>
@@ -330,7 +341,7 @@
   <div class="faq">
     <div class="faq-item"><div class="faq-q">Is the first consultation free?</div><p class="faq-a">Yes. Your first consultation and an initial site visit are complimentary — a chance to walk the land, talk through your goals, and see whether we're the right fit, with no obligation. A full Pre-Purchase Site Selection &amp; Feasibility Study is a separate, deeper engagement for when you're evaluating a specific parcel in detail.</p></div>
     <div class="faq-item"><div class="faq-q">How accurate is this estimate?</div><p class="faq-a">It's a preliminary, order-of-magnitude range for early planning — not a bid. Real costs are set through site analysis, design development, and builder pricing. Think of it as the starting point for that conversation.</p></div>
-    <div class="faq-item"><div class="faq-q">What's included, and what isn't?</div><p class="faq-a">Included: residence construction, sitework and utilities, design, engineering and project management, and a recommended owner contingency. Not included: the land itself, interiors and furnishings, and financing.</p></div>
+    <div class="faq-item"><div class="faq-q">What's included, and what isn't?</div><p class="faq-a">Included: residence construction, sitework and utilities, design, engineering and project management, and a recommended owner contingency. Not included: the land itself, interiors and furnishings, and financing. The cost per square foot is all-in — everything above divided by the home's size. Builder quotes per square foot usually cover construction alone, so that figure is shown separately for a like-for-like comparison.</p></div>
     <div class="faq-item"><div class="faq-q">Why does location change the number so much?</div><p class="faq-a">Resort and remote markets carry higher labor and material costs, mobilization for crews and equipment, and longer design-review and permitting timelines. Steep or slope-side sites add foundation, excavation and snow-load engineering on top of that.</p></div>
     <div class="faq-item"><div class="faq-q">What happens after I send my profile?</div><p class="faq-a">Your selections arrive with your message, so Nicholas can review your site, scale and goals and follow up personally with a more grounded conversation about budget and timeline.</p></div>
   </div>
@@ -539,6 +550,10 @@ const NMD_FEASIBILITY_CONFIG = {
     const rangeStr = money(r.low, r.low >= 1e6 ? 1 : null) + ' – ' + money(r.high, r.high >= 1e6 ? 1 : null);
     document.getElementById('fz-tag').textContent = r.t.short + ' · ' + r.ty.short + ' · ' + num(state.sqft) + ' sq ft';
     document.getElementById('fz-total').textContent = rangeStr;
+    const psf = n => '$' + num(Math.round(n / state.sqft / 5) * 5); // rounded to the nearest $5
+    const psfStr = psf(r.low) + '–' + psf(r.high);
+    document.getElementById('fz-psf').textContent = psfStr;
+    document.getElementById('fz-psf-build').textContent = psf(r.construction);
     document.getElementById('fz-r-build').textContent = money(r.construction);
     document.getElementById('fz-r-site').textContent = money(r.sitework);
     document.getElementById('fz-r-design').textContent = money(r.design);
@@ -560,6 +575,7 @@ const NMD_FEASIBILITY_CONFIG = {
     fields.Feasibility_Advisory_Addons = addonList.length ? addonList.join('; ') : 'None';
     fields.Feasibility_Estimated_Range = rangeStr + ' (midpoint ' + money(r.mid) + ')';
     fields.Feasibility_Timeline = 'Phases 01–03: ' + mos(r.preLo, r.preHi) + ' · Phase 04: ' + mos(r.conLo, r.conHi) + ' · Total: ' + mos(r.preLo + r.conLo, r.preHi + r.conHi);
+    fields.Feasibility_Cost_Per_SqFt = psfStr + ' per sq ft all-in · ' + psf(r.construction) + ' per sq ft construction only';
 
     root.querySelectorAll('[data-fz-field]').forEach(inp => { inp.value = fields[inp.dataset.fzField] || ''; });
     if (state.touched) syncContactForm();
@@ -580,7 +596,8 @@ const NMD_FEASIBILITY_CONFIG = {
   // ── Action B: carry the profile into the main #contact form
   const contactForm = document.querySelector('#contact form.inquiry-form');
   const FZ_KEYS = ['Feasibility_Territory', 'Feasibility_Project_Type', 'Feasibility_SqFt', 'Feasibility_Site_Condition',
-                   'Feasibility_Craft_Tier', 'Feasibility_Advisory_Addons', 'Feasibility_Estimated_Range', 'Feasibility_Timeline'];
+                   'Feasibility_Craft_Tier', 'Feasibility_Advisory_Addons', 'Feasibility_Estimated_Range', 'Feasibility_Timeline',
+                   'Feasibility_Cost_Per_SqFt'];
   function syncContactForm() {
     if (!contactForm) return;
     let box = contactForm.querySelector('[data-fz-injected]');
