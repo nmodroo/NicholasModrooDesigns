@@ -837,9 +837,34 @@ const projects = {
 let currentProject = null;
 let currentIndex = 0;
 
+// Download gallery images ahead of time so the lightbox shows them without a delay.
+// Image objects are kept so the browser holds on to them while the page is open.
+const preloaded = {};
+function preloadImages(key, count) {
+  const p = projects[key];
+  if (!p) return;
+  p.images.slice(0, count).forEach(src => {
+    if (preloaded[src]) return;
+    const img = new Image();
+    img.decoding = 'async';
+    img.src = src;
+    preloaded[src] = img;
+  });
+}
+
+// Hovering (or touching) a project card starts loading its first gallery image before the click.
+document.querySelectorAll('.project-card[onclick]').forEach(card => {
+  const m = card.getAttribute('onclick').match(/openLightbox\('([^']+)'\)/);
+  if (!m) return;
+  const warm = () => preloadImages(m[1], 1);
+  card.addEventListener('pointerenter', warm, {once: true});
+  card.addEventListener('touchstart', warm, {once: true, passive: true});
+});
+
 function openLightbox(key) {
   currentProject = projects[key];
   currentIndex = 0;
+  preloadImages(key, currentProject.images.length);
   renderLightbox();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
